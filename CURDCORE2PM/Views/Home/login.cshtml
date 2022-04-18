@@ -1,0 +1,53 @@
+﻿@model CURDCORE2PM.Models.adminmodel
+@{ 
+    Layout = null;
+}
+
+<link href="~/css/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/css/metisMenu.min.css" rel="stylesheet" />
+<link href="~/css/css/startmin.css" rel="stylesheet" />
+<link href="~/css/css/font-awesome.min.css" rel="stylesheet" />
+
+
+<body>
+
+    
+  
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form asp-action="login" asp-controller="Home" method="post">
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" required="required" />
+                                <h3 class="text-danger">@TempData["msg"]</h3>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" type="password" class="form-control" />
+                                <h3 class="text-danger">@TempData["invalid"]</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" value="login">
+                            </div>
+
+                        </form>
+                        <a asp-controller="Home" asp-action="reg">New user?Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>

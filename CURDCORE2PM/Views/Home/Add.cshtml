@@ -1,0 +1,49 @@
+﻿@model CURDCORE2PM.Models.empmodel
+
+<h1>Regisration Page</h1>
+
+
+<form method="post" asp-controller="Home" asp-action="Add">
+
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group col-lg-6">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control"  required="required"/>
+
+
+    </div>
+
+    <div class="form-group col-lg-6">
+        <label asp-for="Course" class="control-label"></label>
+        <input asp-for="Course" class="form-control"  required="required"/>
+
+
+    </div>
+
+    <div class="form-group col-lg-6">
+        <label asp-for="Gender" class="control-label"></label>
+        <input asp-for="Gender" class="form-control"  required="required" />
+
+    </div>
+
+    <div class="form-group col-lg-6">
+        <label asp-for="Mobile" class="control-label"></label>
+        <input asp-for="Mobile" class="form-control"  required="required" />
+
+    </div>
+
+    <div class="form-group col-lg-6">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control"  required="required" />
+
+
+
+    </div>
+
+    <div class="form-group col-lg-6">
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </div>
+
+
+</form>

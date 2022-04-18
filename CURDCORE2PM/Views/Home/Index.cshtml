@@ -1,0 +1,42 @@
+﻿@model List<CURDCORE2PM.Models.empmodel>
+@using Microsoft.AspNetCore.Http;
+
+@inject IHttpContextAccessor HttpContextAccessor;
+
+
+
+<h4 class="text-primary"> Welcome => @HttpContextAccessor.HttpContext.Session.GetString("Name")</h4>
+<h1>Student Details</h1>
+<div class="form-group">
+    <a class="btn btn-warning" asp-controller="Home" asp-action="Add">Add here..</a>
+</div>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>Delete(core)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Course</td>
+                <td>@item.Gender</td>
+                <td>@item.Mobile</td>
+                <td>@item.Email</td>
+                <td><a href="@Url.Action("Update","Home" ,new{ item.Id })" class="btn btn-primary">Update</a></td>
+                <td><a href="@Url.Action("Delete","Home" ,new{item.Id })" class="btn btn-danger">Delete</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+            </tr>
+
+        }
+    </table>
+</div>
